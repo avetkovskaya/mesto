@@ -5,7 +5,7 @@
 
 ***
 
-* [Ссылка на проект](git commit -m"add")
+* [Ссылка на проект](https://avetkovskaya.github.io/mesto/)
 
 **Что было сделано:*
 Фронтенд:
