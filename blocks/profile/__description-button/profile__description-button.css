@@ -9,9 +9,10 @@
     max-height: 50px;
     padding-left: 19px;
     padding-top: 36px;
-    
+
   }
 }
+
 .profile__description-button:hover {
   cursor: pointer;
   opacity: 0.6;
