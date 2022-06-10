@@ -7,7 +7,7 @@
 
 * [Ссылка на проект](https://avetkovskaya.github.io/mesto/)
 
-**Что было сделано:*
+### Что было сделано:
 Фронтенд:
 
 HTML5, CSS, JS,
