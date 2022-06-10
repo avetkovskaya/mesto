@@ -1,5 +1,6 @@
   .header__logo {
     width: 143px;
+    background-image: url(../../../images/Logo\ name\ mesto.png);
   }
 
   @media screen and (max-width: 320px) {
