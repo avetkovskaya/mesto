@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="slylesheet" href="./vendor/normalize.css">
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="body">
+  <header class="header">
+    <img class="header__logo" src="./images/Logo name mesto.png" class="logo" alt="Логотип">
+  </header>
+  <main class="main">
+    <section class="profile">
+      <img class="profile__image-author" src="./images/Jaques Causteau.png" alt="Жак-Ив Кусто"></div>
+      <div class="profile__author">
+        <div class="profile__author-title">
+          <h1 class="profile__title">Жак-Ив Кусто </h1>
+          <button class='profile__edit-button' aria-label='Редактировать добавление текста' type='button'></button>
+        </div>
+        <p class='profile__about-author'>Исследователь океана</p>
+      </div>
+      <button class="profile__add-picture" aria-label="Добавить" type="button"></button>
+    </section>
+
+    <section class="elements" aria-label="Фотоэлементы">
+      <article class="element">
+        <img class="element__image" src="./images/Dombay.png" alt="Донбай">
+        <h2 class="element__title">Карачаевск</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+      <article class="element">
+        <img class="element__image" src="./images/mount Elbrus.png" alt="Эльбрус">
+        <h2 class="element__title">Эльбрус</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+      <article class="element">
+        <img class="element__image" src="./images/Karachaevo-Cherkesia.webp" alt="Карачаево-Черкесия">
+        <h2 class="element__title">Донбай</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+      <article class="element">
+        <img class="element__image" src="./images/Скрытый пляж в Пуэрто-Вальярта, Мексика.jpeg"
+          alt="Скрытый пляж в Пуэрто-Вальярта, Мексика.">
+        <h2 class="element__title">Пуэрто-Вальярта Мексика</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+      <article class="element">
+        <img class="element__image" src="./images/Остров-Ко-Рок.jpeg" alt="Тайланд">
+        <h2 class="element__title">Остров-Ко-Рок Тайланд</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+      <article class="element">
+        <img class="element__image" src="./images/Мраморные пещеры Чили.jpeg" alt="Мраморные пещеры Чили">
+        <h2 class="element__title">Мраморные пещеры Чили</h2>
+        <button class="element__like" aria-label="Мне нравится" type="button"></button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class='footer__copyright'>&copy; 2022 Ветковская Анастасия</p>
+  </footer>
+
+  <div class="popup popup_for_edit-title">
+    <div class="popup__container">
+      <button class="popup__close-button" aria-label="Закрытие формы" type="button"></button>
+      <form class="form">
+        <h2 class="form__title">Редактировать профиль</h2>
+        <input class="form__input form__input_info_name-author" placeholder="Имя автора" type="text" required />
+        <input class="form__input form__input_info_name-author-job" placeholder="Профессия автора" type="text"
+          required />
+        <button class="form__save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

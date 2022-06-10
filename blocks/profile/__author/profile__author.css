@@ -1,0 +1,16 @@
+.profile__author {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__author {
+    align-items: center;
+    padding-left: 0;
+    width: 100%;
+  }
+}
