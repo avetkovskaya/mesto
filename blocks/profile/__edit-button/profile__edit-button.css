@@ -17,6 +17,8 @@
   .profile__edit-button {
     max-width: 18px;
     max-height: 18px;
+    margin-left: 0;
+    margin-right: 19px;
 
   }
 }

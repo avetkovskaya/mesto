@@ -3,3 +3,9 @@
   max-width: 120px;
   max-height: 120px;
 }
+@media screen and (max-width: 602px) {
+.profile__image-author{
+margin-bottom: 22px;
+  }
+
+}
