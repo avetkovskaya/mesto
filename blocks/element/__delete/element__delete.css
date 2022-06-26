@@ -3,6 +3,7 @@
   z-index: 5;
   top: 20px;
   right: 20px;
+  background-image: url(../../../images/Trash.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   width: 18px;
@@ -10,6 +11,7 @@
   border: 0;
   cursor: pointer;
   transition: .5s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .element__delete:hover {

@@ -6,7 +6,6 @@
   height: 31px;
   font-size: 14px;
   line-height: 17px;
-  margin-top: 41px;
 }
 
 .form__input:last-of-type {
@@ -15,7 +14,6 @@
 
 @media screen and (max-width: 767px) {
   .form__input {
-    margin-top: 75px;
     min-width: 238px;
   }
 }

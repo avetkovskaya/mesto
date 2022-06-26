@@ -1,9 +1,14 @@
 .form {
-  max-width: 100%;
+  box-sizing: border-box;
+  padding: 34px 36px 37px;
+  display: grid;
+  grid-template: repeat(4, min-content) / 1fr;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 767px) {
   .form {
-    margin: 25px 22px 25px 22px;
+    padding: 25px 22px 25px;
   }
 }
