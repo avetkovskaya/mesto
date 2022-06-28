@@ -30,7 +30,7 @@
     <section class="elements" aria-label="Фотоэлементы">
       <template id="element">
         <article class="element">
-          <img class="element__image" src="#" alt="">
+          <img class="element__image" src="" alt="">
           <button class="element__delete" aria-label="Удалить" type="button"></button>
           <h2 class="element__title"></h2>
           <button class="element__like" aria-label="Мне нравится" type="button"></button>
@@ -48,9 +48,12 @@
       <button class="popup__close-button" aria-label="Закрытие формы" type="button"></button>
       <form class="form form_for_edit-title">
         <h2 class="form__title">Редактировать профиль</h2>
-        <input class="form__input form__input_info_name-author" placeholder="Имя автора" type="text" required />
-        <input class="form__input form__input_info_name-author-job" placeholder="Профессия автора" type="text"
-          required />
+        <input class="form__input form__input_info_name-author" id="name-author-input" placeholder="Имя автора"
+          type="text" minlength="2" maxlength="40" required />
+        <span class="form__input-error name-author-input-error"></span>
+        <input class="form__input form__input_info_name-author-job" id="name-author-job-input"
+          placeholder="Профессия автора" type="text" minlength="2" maxlength="200" required />
+        <span class="form__input-error name-author-job-input-error"></span>
         <button class="form__save" type="submit">Сохранить</button>
       </form>
     </div>
@@ -60,8 +63,12 @@
       <button class="popup__close-button" aria-label="Закрытие формы" type="button"></button>
       <form class="form form_for_add-card">
         <h2 class="form__title">Новое место</h2>
-        <input class="form__input form__input_info_name-card" placeholder="Название Картинки" type="text" required />
-        <input class="form__input form__input_info_link-image" placeholder="Ссылка на картинку" type="url" required />
+        <input class="form__input form__input_info_name-card" id="name-card-input" placeholder="Название Картинки"
+          type="text" minlength="2" maxlength="30" required />
+        <span class="form__input-error name-card-input-error"></span>
+        <input class="form__input form__input_info_link-image" id="link-img-input" placeholder="Ссылка на картинку"
+          type="url" required />
+        <span class="form__input-error link-img-input-error"></span>
         <button class="form__save" type="submit">Создать</button>
       </form>
     </div>

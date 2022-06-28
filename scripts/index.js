@@ -2,6 +2,7 @@ const btnopenEditAuthor = document.querySelector('.profile__edit-button');
 const btnopenAddCard = document.querySelector('.profile__add-picture');
 const popupCloseList = document.querySelectorAll('.popup__close-button');
 
+const popups = document.querySelectorAll('.popup');
 const popupEditAuthor = document.querySelector('.popup_for_edit-title');
 const popupCard = document.querySelector('.popup_for_card');
 const popupZoomImage = document.querySelector('.popup_for_zoom-image');
@@ -22,10 +23,17 @@ const templateCard = document.querySelector('#element').content;
 
 function openPopup(element) {
   element.classList.add('popup_visible');
+  document.addEventListener('keydown', closePopupEscape);
 };
 
 function closePopup(element) {
   element.classList.remove('popup_visible');
+};
+
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_visible'));
+  };
 };
 
 function openPropfilePopup() {
@@ -82,6 +90,7 @@ function submitAddCard(evt) {
   addCard(placeForCard, element);
   formCard.reset();
   closePopup(popupCard);
+  buttonDisabled(evt.target.querySelector('.form__save'), selectors);
 };
 
 initialCards.forEach((item) => {
@@ -93,6 +102,14 @@ btnopenEditAuthor.addEventListener('click', openPropfilePopup);
 btnopenAddCard.addEventListener('click', () => openPopup(popupCard))
 popupCloseList.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
+});
+
+popups.forEach((item) => {
+  item.addEventListener('click', function (evt) {
+    if (evt.target.classList.contains('popup_visible')) {
+      closePopup(item);
+    }
+  });
 });
 
 formAuthor.addEventListener('submit', submitProfile);
