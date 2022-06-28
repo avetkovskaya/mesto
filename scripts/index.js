@@ -1,5 +1,5 @@
-const btnOpenEditAuthor = document.querySelector('.profile__edit-button');
-const btnOpenAddCard = document.querySelector('.profile__add-picture');
+const btnopenEditAuthor = document.querySelector('.profile__edit-button');
+const btnopenAddCard = document.querySelector('.profile__add-picture');
 const popupCloseList = document.querySelectorAll('.popup__close-button');
 
 const popupEditAuthor = document.querySelector('.popup_for_edit-title');
@@ -89,8 +89,8 @@ initialCards.forEach((item) => {
   addCard(placeForCard, card);
 });
 
-btnOpenEditAuthor.addEventListener('click', openPropfilePopup);
-btnOpenAddCard.addEventListener('click', () => openPopup(popupCard))
+btnopenEditAuthor.addEventListener('click', openPropfilePopup);
+btnopenAddCard.addEventListener('click', () => openPopup(popupCard))
 popupCloseList.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
 });
