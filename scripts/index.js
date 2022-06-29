@@ -1,6 +1,6 @@
-const btnopenEditAuthor = document.querySelector('.profile__edit-button');
-const btnopenAddCard = document.querySelector('.profile__add-picture');
-const popupCloseList = document.querySelectorAll('.popup__close-button');
+const btnOpenEditAuthor = document.querySelector('.profile__edit-button');
+const btnOpenAddCard = document.querySelector('.profile__add-picture');
+const popupsCloseList = document.querySelectorAll('.popup__close-button');
 
 const popups = document.querySelectorAll('.popup');
 const popupEditAuthor = document.querySelector('.popup_for_edit-title');
@@ -21,13 +21,17 @@ const authorJobProfile = document.querySelector('.profile__about-author');
 const placeForCard = document.querySelector('.elements');
 const templateCard = document.querySelector('#element').content;
 
+const popupImage = document.querySelector('.popup__image');
+const popupImageTitle = document.querySelector('.popup__image-title');
+
 function openPopup(element) {
   element.classList.add('popup_visible');
   document.addEventListener('keydown', closePopupEscape);
 };
 
 function closePopup(element) {
-  element.classList.remove('popup_visible');
+  popup.classList.remove('popup_visible');
+  document.removeEventListener('keydown', closePopupEscape);
 };
 
 function closePopupEscape(evt) {
@@ -59,8 +63,6 @@ function deleteCard(evt) {
 
 function zoomImage(element) {
   openPopup(popupZoomImage);
-  const popupImage = document.querySelector('.popup__image');
-  const popupImageTitle = document.querySelector('.popup__image-title');
   popupImage.src = element.src;
   popupImage.alt = element.alt;
   popupImageTitle.textContent = element.alt;
@@ -98,8 +100,8 @@ initialCards.forEach((item) => {
   addCard(placeForCard, card);
 });
 
-btnopenEditAuthor.addEventListener('click', openPropfilePopup);
-btnopenAddCard.addEventListener('click', () => openPopup(popupCard))
+btnOpenEditAuthor.addEventListener('click', openPropfilePopup);
+btnOpenAddCard.addEventListener('click', () => openPopup(popupCard))
 popupCloseList.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
 });
