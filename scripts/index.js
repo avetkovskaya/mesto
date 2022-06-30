@@ -30,7 +30,7 @@ function openPopup(element) {
 };
 
 function closePopup(element) {
-  popup.classList.remove('popup_visible');
+  element.classList.remove('popup_visible');
   document.removeEventListener('keydown', closePopupEscape);
 };
 
@@ -102,9 +102,9 @@ initialCards.forEach((item) => {
 
 btnOpenEditAuthor.addEventListener('click', openPropfilePopup);
 btnOpenAddCard.addEventListener('click', () => openPopup(popupCard))
-popupsCloseList.forEach((item) => {
+/*popupsCloseList.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
-});
+});*/
 
 popups.forEach((item) => {
   item.addEventListener('click', function (evt) {
