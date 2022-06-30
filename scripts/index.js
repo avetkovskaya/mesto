@@ -102,7 +102,7 @@ initialCards.forEach((item) => {
 
 btnOpenEditAuthor.addEventListener('click', openPropfilePopup);
 btnOpenAddCard.addEventListener('click', () => openPopup(popupCard))
-popupCloseList.forEach((item) => {
+popupsCloseList.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
 });
 
