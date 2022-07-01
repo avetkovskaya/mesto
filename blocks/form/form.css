@@ -3,10 +3,14 @@
   padding: 34px 36px 37px;
   background-color: #fff;
   border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  
 }
 
 @media screen and (max-width: 767px) {
   .form {
     padding: 25px 22px 25px 22px;
+    
   }
 }

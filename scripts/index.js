@@ -1,6 +1,6 @@
 const btnOpenEditAuthor = document.querySelector('.profile__edit-button');
 const btnOpenAddCard = document.querySelector('.profile__add-picture');
-const popupsCloseList = document.querySelectorAll('.popup__close-button');
+const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 
 const popups = document.querySelectorAll('.popup');
 const popupEditAuthor = document.querySelector('.popup_for_edit-title');
@@ -102,9 +102,9 @@ initialCards.forEach((item) => {
 
 btnOpenEditAuthor.addEventListener('click', openPropfilePopup);
 btnOpenAddCard.addEventListener('click', () => openPopup(popupCard))
-/*popupsCloseList.forEach((item) => {
+popupCloseButtons.forEach((item) => {
   item.addEventListener('click', () => closePopup(item.closest('.popup')));
-});*/
+});
 
 popups.forEach((item) => {
   item.addEventListener('click', function (evt) {
