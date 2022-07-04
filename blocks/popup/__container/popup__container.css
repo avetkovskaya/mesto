@@ -6,14 +6,15 @@
   margin: auto;
   position: relative;
 }
-@media (max-width:768px){
-  .popup__container{
+
+@media (max-width:768px) {
+  .popup__container {
     max-width: 282px;
   }
 }
-  
-  
-  /*display: flex;
+
+
+/*display: flex;
   width: min-content;
   height: min-content;
   position: relative;
