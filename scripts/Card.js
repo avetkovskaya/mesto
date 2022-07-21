@@ -36,6 +36,7 @@ export default class Card {
     return openPopup(popupForScaleImg);
   }
 
+
   _setEventListener() {
     this._image = this._element.querySelector(".element__image");
     this._element

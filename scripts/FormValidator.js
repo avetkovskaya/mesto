@@ -3,7 +3,7 @@ export default class FormValidator {
     this._formElement = formElement;
     this._selectorsNames = selectorsNames;
     this._buttonElement = this._formElement.querySelector(
-      this._selectorsNames.submitButtonSelector
+    this._selectorsNames.submitButtonSelector
     );
     this._inputList = Array.from(
       formElement.querySelectorAll(this._selectorsNames.inputSelector)

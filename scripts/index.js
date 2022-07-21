@@ -1,4 +1,4 @@
-import Card from "./Card.js";
+import Card from "./Card";
 import FormValidator from "./FormValidator.js";
 
 const selectorsNamesForValidation = {
@@ -17,7 +17,7 @@ const popupZoomImage = document.querySelector('.popup_for_zoom-image');
 const btnOpenEditAuthor = document.querySelector('.profile__edit-button');
 const btnOpenAddCard = document.querySelector('.profile__add-picture');
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
-const popupCard = document.querySelector('.popup_for_image-container');
+
 
 const formAuthor = popupForEditAuthor.querySelector(
   ".form_for_edit-title"
