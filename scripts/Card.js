@@ -1,6 +1,4 @@
-import {
-  openPopup
-} from "./index.js";
+import {openPopup} from "./index.js";
 
 export default class Card {
   constructor(data, cardSelector) {
@@ -8,9 +6,7 @@ export default class Card {
     this._imageLink = data.link;
     this._cardSelector = cardSelector;
     this._element = this._getTemplate();
-    this._formImg = this._popup.querySelector('.popup__image');
-    this._formImgTitle = this._popup.querySelector('.popup__image-title');
-    this._popupForScaleImg = document.querySelector('.popup__image-container');
+
   }
 
   _getTemplate() {
@@ -18,7 +14,6 @@ export default class Card {
       .querySelector(this._cardSelector)
       .content.querySelector(".element")
       .cloneNode(true);
-
     return cardElement;
   }
 
@@ -28,6 +23,18 @@ export default class Card {
 
   _removeCard(evt) {
     evt.target.closest(".element").remove();
+  }
+
+  _scaleImage(evt) {
+    this._popupForScaleImg = document.querySelector('.popup_for_zoom-image');
+    this._formImg = this._popupForScaleImg.querySelector('.popup__image');
+    this._formImgTitle = this._popupForScaleImg.querySelector('.popup__image-title');
+
+    this._formImg.src = evt.target.src;
+    this._formImg.alt = evt.target.alt;
+    this._formImgTitle.textContent = evt.target.alt;
+
+    return openPopup(this._popupForScaleImg);
   }
 
   _setEventListener() {

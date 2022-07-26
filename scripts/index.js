@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 
 const selectorsNamesForValidation = {
@@ -13,24 +13,20 @@ const selectorsNamesForValidation = {
 const popups = document.querySelectorAll('.popup');
 const popupEditAuthor = document.querySelector('.popup_for_edit-title');
 const popupCard = document.querySelector('.popup_for_card');
-const popupZoomImage = document.querySelector('.popup_for_zoom-image');
 const btnOpenEditAuthor = document.querySelector('.profile__edit-button');
 const btnOpenAddCard = document.querySelector('.profile__add-picture');
-const popupCloseButtons = document.querySelectorAll('.popup__close-button');
-const popupVisible = document.querySelectorAll('.popup_visible');
 
-
-const formAuthor = popupForEditAuthor.querySelector(
+const formAuthor = popupEditAuthor.querySelector(
   ".form_for_edit-title"
 );
 
-const formCard = popupForAddCard.querySelector(".form_for_add-card"); 
+const formCard = popupCard.querySelector(".form_for_add-card"); 
 
-const formInputImage = formForAddCard.querySelector(
+const formInputImage = formCard.querySelector(
   ".form__input_info_link-image"
 );
 
-const inputImageName = formForAddCard.querySelector(
+const inputImageName = formCard.querySelector(
   ".form__input_info_name-card"
 );
 
@@ -66,15 +62,15 @@ const initialCards = [
     name: 'Байкал',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
-]; 
+];
 
 const validatorFormForEditAuthor = new FormValidator(
   selectorsNamesForValidation,
-  formForEditAuthor
+  formAuthor
 );
 const validatorFromForAddCard = new FormValidator(
   selectorsNamesForValidation,
-  formForCard
+  formCard
 );
 
 export function openPopup(popup) {
@@ -95,16 +91,16 @@ function popupCloseEsc(evt) {
 }
 
 function openPropfilePopup() {
-  authorProfileInput.value = authorProfile.textContent;
-  authorJobProfileInput.value = authorJobProfile.textContent;
+  authorNameInForm.value = authorProfile.textContent;
+  authorJobInform.value = authorJobProfile.textContent;
   validatorFormForEditAuthor.resetValidation();
   openPopup(popupEditAuthor);
 }
 
 function submitProfileInfo(evt) {
   evt.preventDefault();
-  authorProfile.textContent = authorProfileInput.value;
-  authorJobProfile.textContent = authorJobProfileInput.value;
+  authorProfile.textContent = authorNameInForm.value;
+  authorJobProfile.textContent = authorJobInform.value;
   closePopup(popupEditAuthor);
 }
 
@@ -113,7 +109,7 @@ function renderCard(elementPlace, element) {
 }
 
 function handleNewCard(card) {
-  const newCard = new Card(card, "#card").generateCard();
+  const newCard = new Card(card, "#element").generateCard();
   return newCard;
 }
 
@@ -122,33 +118,28 @@ function submitAddCard(evt) {
 
   const cardContainer = [];
   cardContainer.link = formInputImage.value;
-  cardContainer.name = formInputTitle.value;
+  cardContainer.name = inputImageName.value;
 
   renderCard(cardElements, handleNewCard(cardContainer));
 
   closePopup(popupCard);
-  formForAddCard.reset();
+  formCard.reset();
 }
-
-window.onload = function () {
-  const body = document.querySelector('.page');
-  body.style.display = 'flex';
-};
 
 validatorFormForEditAuthor.enableValidation();
 validatorFromForAddCard.enableValidation();
 
-profileEditOpenBtn.addEventListener("click", openPropfilePopup);
-cardAddOpenBtn.addEventListener("click", () => {
-  formForAddCard.reset();
+btnOpenEditAuthor.addEventListener("click", openPropfilePopup);
+btnOpenAddCard.addEventListener("click", () => {
+  formCard.reset();
   validatorFromForAddCard.resetValidation();
   openPopup(popupCard);
 });
 
-formForEditAuthor.addEventListener("submit", submitProfileInfo);
-formForAddCard.addEventListener("submit", submitAddCard);
+formAuthor.addEventListener("submit", submitProfileInfo);
+formCard.addEventListener("submit", submitAddCard);
 
-popupList.forEach((item) => {
+popups.forEach((item) => {
   item.addEventListener("mousedown", function (evt) {
     if (
       evt.target.classList.contains("popup_visible") ||
@@ -162,3 +153,4 @@ popupList.forEach((item) => {
 initialCards.forEach((item) => {
   renderCard(cardElements, handleNewCard(item));
 });
+
