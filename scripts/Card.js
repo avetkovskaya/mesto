@@ -1,4 +1,6 @@
-import { openPopup } from "./index.js";
+import {
+  openPopup
+} from "./index.js";
 
 export default class Card {
   constructor(data, cardSelector) {
@@ -25,17 +27,17 @@ export default class Card {
     evt.target.closest(".element").remove();
   }
 
-  _scaleImage(evt) {
-    const popupForScaleImg = document.querySelector(".popup__image-container");
-    const formImg = document.querySelector(".popup__image");
-    const formImgTitle = document.querySelector(".popup__image-title");
+  constructor(popupSelector) {
+    super(popupSelector);
+    this._formImg = this._popup.querySelector('.popup__image');
+    this._formImgTitle = this._popup.querySelector('.popup__image-title');
+    this._popupForScaleImg = document.querySelector(".popup__image-container");
     formImg.src = evt.target.src;
     formImg.alt = evt.target.alt;
     formImgTitle.textContent = evt.target.alt;
 
     return openPopup(popupForScaleImg);
   }
-
 
   _setEventListener() {
     this._image = this._element.querySelector(".element__image");
