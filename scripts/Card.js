@@ -8,6 +8,9 @@ export default class Card {
     this._imageLink = data.link;
     this._cardSelector = cardSelector;
     this._element = this._getTemplate();
+    this._formImg = this._popup.querySelector('.popup__image');
+    this._formImgTitle = this._popup.querySelector('.popup__image-title');
+    this._popupForScaleImg = document.querySelector('.popup__image-container');
   }
 
   _getTemplate() {
@@ -25,18 +28,6 @@ export default class Card {
 
   _removeCard(evt) {
     evt.target.closest(".element").remove();
-  }
-
-  constructor(popupSelector) {
-    super(popupSelector);
-    this._formImg = this._popup.querySelector('.popup__image');
-    this._formImgTitle = this._popup.querySelector('.popup__image-title');
-    this._popupForScaleImg = document.querySelector(".popup__image-container");
-    formImg.src = evt.target.src;
-    formImg.alt = evt.target.alt;
-    formImgTitle.textContent = evt.target.alt;
-
-    return openPopup(popupForScaleImg);
   }
 
   _setEventListener() {
