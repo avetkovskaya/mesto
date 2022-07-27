@@ -4,8 +4,8 @@ import FormValidator from "./FormValidator.js";
 const selectorsNamesForValidation = {
   formSelector: ".form",
   inputSelector: ".form__input",
-  inputErrorClass: "form__input-error",
-  errorClass: "form__input-error_active",
+  inputErrorClass: "form__input-error_active",
+  errorClass: "form__input-error_visible",
   submitButtonSelector: ".form__save",
   inactiveButtonClass: "form__save_inactive", 
 };

@@ -5,11 +5,10 @@ export default class Card {
     this._title = data.name;
     this._imageLink = data.link;
     this._cardSelector = cardSelector;
+    this._element = this._getTemplate();
     this._popupForScaleImg = document.querySelector('.popup_for_zoom-image');
     this._formImg = this._popupForScaleImg.querySelector('.popup__image');
     this._formImgTitle = this._popupForScaleImg.querySelector('.popup__image-title');
-    this._element = this._getTemplate();
-
   }
 
   _getTemplate() {
@@ -28,12 +27,10 @@ export default class Card {
     evt.target.closest(".element").remove();
   }
 
-
   _scaleImage(evt) {
     this._formImg.src = evt.target.src;
     this._formImg.alt = evt.target.alt;
     this._formImgTitle.textContent = evt.target.alt;
-
     return openPopup(this._popupForScaleImg);
   }
 
@@ -45,7 +42,7 @@ export default class Card {
     this._element
       .querySelector(".element__delete")
       .addEventListener("click", this._removeCard);
-    this._image.addEventListener("click", (evt)=> this._scaleImage(evt));
+    this._image.addEventListener("click", (evt) => this._scaleImage(evt));
   }
 
   generateCard() {
